@@ -70,6 +70,17 @@ class ListNode {
     }
     return result;
   }
+
+  findIndexValue(index) {
+    if(index>=this.count) {
+      return null;
+    }
+    let current = this.head;
+    for(let i=0; i<index; i++) {
+      current = current.next;
+    }
+    return current.value;
+  }
 }
 
 const listNode = new ListNode();
@@ -87,3 +98,4 @@ console.log(listNode.toArray());
 console.log(listNode.contain(9));
 console.log(listNode.contain(19));
 console.log(listNode.length);
+console.log(listNode.findIndexValue(5));
